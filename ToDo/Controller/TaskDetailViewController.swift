@@ -29,7 +29,6 @@ class TaskDetailViewController: UITableViewController {
                 else{
                     navigationController?.popViewController(animated: true)
                 }
-
     }
     
     
