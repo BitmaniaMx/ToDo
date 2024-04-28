@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B563B422BDC6D4F006103A5 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B563B412BDC6D4F006103A5 /* ViewControllerExtension.swift */; };
 		7BA2CF532BD4483600B4ACE2 /* TDTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2CF512BD4483600B4ACE2 /* TDTask+CoreDataClass.swift */; };
 		7BA2CF542BD4483600B4ACE2 /* TDTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2CF522BD4483600B4ACE2 /* TDTask+CoreDataProperties.swift */; };
 		7BA2CF572BD44C1100B4ACE2 /* TaskManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BA2CF562BD44C1100B4ACE2 /* TaskManager.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B563B412BDC6D4F006103A5 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		7BA2CF512BD4483600B4ACE2 /* TDTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TDTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		7BA2CF522BD4483600B4ACE2 /* TDTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TDTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		7BA2CF562BD44C1100B4ACE2 /* TaskManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManager.swift; sourceTree = "<group>"; };
@@ -49,6 +51,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B563B402BDC6D25006103A5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7B563B412BDC6D4F006103A5 /* ViewControllerExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7BA2CF552BD44BD100B4ACE2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		7BDC3BA32BD3D00C00B8958F /* ToDo */ = {
 			isa = PBXGroup;
 			children = (
+				7B563B402BDC6D25006103A5 /* Extension */,
 				7BA2CF552BD44BD100B4ACE2 /* Model */,
 				7BDC3BC22BD3DA3900B8958F /* View */,
 				7BDC3BBB2BD3D21F00B8958F /* Controller */,
@@ -188,6 +199,7 @@
 				7BDC3BAF2BD3D00C00B8958F /* ToDo.xcdatamodeld in Sources */,
 				7BDC3BC12BD3D91C00B8958F /* ToDoListViewController.swift in Sources */,
 				7BA2CF532BD4483600B4ACE2 /* TDTask+CoreDataClass.swift in Sources */,
+				7B563B422BDC6D4F006103A5 /* ViewControllerExtension.swift in Sources */,
 				7BDC3BBD2BD3D23E00B8958F /* TaskDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

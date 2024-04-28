@@ -24,6 +24,14 @@ class TasksManager{
             print("error: ", error)
         }
     }
+    
+    func countTask() -> Int {
+        return TDTasks.count
+    }
+    
+    func getTask(at index : Int) -> TDTask {
+        return TDTasks[index]
+    }
         
     //Fetch using a predicate
     func fetchWithPredicate(searchValue : String) {
@@ -50,7 +58,7 @@ class TasksManager{
             predicates.append(NSPredicate(format: "notes LIKE %@", notes))
         }
         
-        var compoundPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
+        let compoundPredicate = NSCompoundPredicate(orPredicateWithSubpredicates: predicates)
         
         
         do {
@@ -62,5 +70,6 @@ class TasksManager{
         catch let error{
             print("error: ", error)
         }
+        
     }
 }

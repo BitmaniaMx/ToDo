@@ -52,7 +52,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="x5o-Lt-L5Y">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="34.666666666666664"/>
                                                 </datePicker>
                                             </subviews>
                                             <constraints>
@@ -108,10 +108,20 @@
                                 <action selector="cancelButtonTapped:" destination="xb4-8L-dfE" id="tu9-Pc-amS"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yxD-64-BLm"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="yxD-64-BLm">
+                            <connections>
+                                <segue destination="pwr-1l-AYr" kind="unwind" unwindAction="unWindToToDoListWithSegue:" id="xsm-OS-1RG"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="taskDate" destination="x5o-Lt-L5Y" id="Z3b-BD-7gh"/>
+                        <outlet property="taskNotes" destination="Iw7-Ba-bN0" id="HsL-95-ncN"/>
+                        <outlet property="taskTitle" destination="1cP-2E-14r" id="XqA-7O-fSS"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NQ4-cw-M9Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="pwr-1l-AYr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4197.7099236641216" y="10.563380281690142"/>
         </scene>
@@ -128,12 +138,29 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Dgk-Gf-OZJ" customClass="TDTaskCell" customModule="ToDo" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="361" height="43.666667938232422"/>
+                                        <rect key="frame" x="0.0" y="50" width="361" height="42.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Dgk-Gf-OZJ" id="UZo-zC-ics">
-                                            <rect key="frame" x="0.0" y="0.0" width="361" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="42.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bpm-do-Lfb">
+                                                    <rect key="frame" x="36" y="11.000000000000002" width="289" height="20.666666666666671"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Bpm-do-Lfb" secondAttribute="bottom" id="Bg8-Of-BBg"/>
+                                                <constraint firstItem="Bpm-do-Lfb" firstAttribute="leading" secondItem="UZo-zC-ics" secondAttribute="leadingMargin" constant="16" id="OPP-DV-gra"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Bpm-do-Lfb" secondAttribute="trailing" constant="16" id="TCp-xJ-2Zw"/>
+                                                <constraint firstItem="Bpm-do-Lfb" firstAttribute="top" secondItem="UZo-zC-ics" secondAttribute="topMargin" id="eRq-kx-tDG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskTitle" destination="Bpm-do-Lfb" id="fzn-fk-zLn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -148,6 +175,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nmL-bk-WpH">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="em5-Yr-iYZ">
+                            <connections>
+                                <action selector="editButtonTapped:" destination="PGf-LD-P4X" id="UlH-8D-C0K"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="36e-Mc-90a">
                             <connections>
                                 <segue destination="KE3-Lj-SDq" kind="presentation" identifier="addTaskSegue" id="cLD-8t-HPa"/>
@@ -155,8 +187,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ToDoList" destination="7ez-7M-ttc" id="dc2-1Y-iE1"/>
                         <outlet property="addTaskButton" destination="36e-Mc-90a" id="b5h-io-Zdp"/>
+                        <outlet property="toDoList" destination="7ez-7M-ttc" id="dc2-1Y-iE1"/>
                         <segue destination="xb4-8L-dfE" kind="show" identifier="showTaskSegue" id="Uln-Xh-rrg"/>
                     </connections>
                 </viewController>
